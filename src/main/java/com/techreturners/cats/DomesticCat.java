@@ -1,8 +1,9 @@
 package com.techreturners.cats;
 
-public class DomesticCat  extends ParentCat{
-    private final String setting = "domestic";
-    private final int height = 23;
+public class DomesticCat extends ParentCat {
+    private static final String setting = "domestic";
+    private static final int height = 23;
+
     @Override
     public String getSetting() {
         return setting;
@@ -15,7 +16,16 @@ public class DomesticCat  extends ParentCat{
 
     @Override
     public String eat() {
+        makeCommentRandomly();
         return EatSounds.CAT.getSound();
+    }
+
+    private static void makeCommentRandomly() {
+        int max = 10;
+
+        if ((int) (Math.random() * max) > 4) {
+            System.out.println("It will do I suppose");
+        }
     }
 
 }
