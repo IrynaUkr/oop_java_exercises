@@ -1,6 +1,7 @@
 package com.techreturners.cats;
 
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class CatTest {
@@ -29,7 +30,9 @@ public class CatTest {
     @Test
     public void checkCatSetting() {
         Cat domesticCat = new DomesticCat();
+        Cat cheetah = new CheetahCat();
         assertEquals("domestic", domesticCat.getSetting());
+        assertNotEquals("domestic", cheetah.getSetting());
     }
 
     @Test
@@ -41,7 +44,10 @@ public class CatTest {
     @Test
     public void checkLionHeight() {
         Cat lionCat = new LionCat();
+        Cat cheetahCat = new CheetahCat();
         assertEquals(1100, lionCat.getAverageHeight());
+        assertEquals(123, cheetahCat.getAverageHeight());
+
     }
 
 
@@ -62,4 +68,5 @@ public class CatTest {
         Cat domesticCat = new DomesticCat();
         assertEquals("Purrrrrrr", domesticCat.eat());
     }
+
 }
